@@ -1,17 +1,20 @@
 import './table.css'
+import Row from './Row'
 
-function Table(){
+function Table(props){
+    
     return(
-        <table class="table table-hover">
+        <table className="table table-hover">
             <thead>
                 <tr><th>Name</th><th>Designation</th><th>Date Of join</th></tr>
             </thead>
             <tbody>
-                <tr>
-                    <td>Sanjeevi kumar</td>
-                    <td>Trainee Developer</td>
-                    <td>14/12/2020</td>
-                </tr>
+            {props.tableData.map((data,key)=>{
+                console.log(data.id)
+            return(
+                <Row name={data.name} designation={data.designation} doj = {data.Doj} key={data.id} />
+                )
+            })}    
             </tbody>
         </table>
     )

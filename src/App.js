@@ -3,14 +3,39 @@ import './App.css';
 import Head from './Head';
 import Para from './Para';
 import Table from './Table'
+import Form from './Form'
 
 function App() {
+  const tableData = [
+    {
+        id:1,
+        name:"sanjeevi",
+        designation : "trainee developer",
+        Doj:"14/12/2020"
+    },
+    {
+        id:2,
+        name:"Ragavi",
+        designation : "trainee developer",
+        Doj:"14/12/2020"
+    },
+    {
+        id:3,
+        name:"Rohini",
+        designation : "trainee developer",
+        Doj:"14/12/2020"
+    }
+]
   return (
     <div className="App">
     
     <Head />
     <Para />
-    <Table />
+     <div className="row">
+       <div className="col-6"><Form /></div>
+       <div className="col-6"><Table tableData={tableData} /></div>
+     </div>
+    
     </div> 
       /*<header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
